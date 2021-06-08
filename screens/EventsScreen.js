@@ -1,7 +1,8 @@
 import * as React from "react";
 import { Text, View } from "react-native";
+import { createStackNavigator } from "@react-navigation/stack";
 
-export default function EventsScreen() {
+function EventsScreen() {
   return (
     <View
       style={{
@@ -13,5 +14,15 @@ export default function EventsScreen() {
     >
       <Text>Events!</Text>
     </View>
+  );
+}
+
+const Stack = createStackNavigator();
+
+export default function EventsStack() {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name="Events" component={EventsScreen} />
+    </Stack.Navigator>
   );
 }
